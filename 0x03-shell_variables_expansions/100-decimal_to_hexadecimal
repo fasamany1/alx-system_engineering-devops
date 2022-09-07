@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%x\n" $DEC|MAL:
+printf "%x\n" $DEC|MAL
