@@ -100,7 +100,7 @@ It is organized from the lowest level to the highest level:
 
 Keep in mind that the OSI model is a concept, it’s not even tangible. The OSI model doesn’t perform any functions in the networking process. It is a conceptual framework so we can better understand complex interactions that are happening. Most of the functionality in the OSI model exists in all communications systems.
 
-**image**
+![image](https://user-images.githubusercontent.com/9413367/216278810-f6bd06ea-444c-41ff-b680-0094a62a70d8.png)
 
 In this project we will mainly focus on:
 
@@ -109,7 +109,7 @@ In this project we will mainly focus on:
 
 The image bellow describes more concretely how you can relate to every level.
 
-**image**
+![image](https://user-images.githubusercontent.com/9413367/216279086-596bdadb-f374-49bf-95f5-a1aebc16c774.png)
 
 Questions:
 
