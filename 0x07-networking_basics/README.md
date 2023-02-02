@@ -133,7 +133,7 @@ How is the OSI model organized?
 
 #### 1. Types of network
 
-**image**
+![image](https://user-images.githubusercontent.com/9413367/216279393-ef98bcb2-db95-40f7-852e-83aa265531d1.png)
 
 LAN connect local devices together, WAN connects LANs together, and WANs are operating over the Internet.
 
@@ -165,7 +165,7 @@ What network do you use when you browse www.google.com from your smartphone (not
 
 #### 2. MAC and IP address
 
-**image**
+![image](https://user-images.githubusercontent.com/9413367/216279484-216af2e8-1d0e-4522-99eb-28eff41379f3.png)
 
 Questions:
 
@@ -189,7 +189,7 @@ What is an IP address?
 
 #### 3. UDP and TCP
 
-**image**
+![image](https://user-images.githubusercontent.com/9413367/216279577-263b6060-fe2b-4e08-b846-ac7155c33e1d.png)
 
 Let’s fill the empty parts in the drawing above.
 
