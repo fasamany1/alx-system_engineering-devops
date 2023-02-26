@@ -35,6 +35,7 @@ Read or watch:
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 ### General
+
 * You must be able to draw a diagram covering the web stack you built with the sysadmin/devops track projects
 * You must be able to explain what each component is doing
 * You must be able to explain system redundancy
@@ -43,6 +44,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 ## Requirements
 
 ### General
+
 * A README.md file, at the root of the folder of the project, is mandatory
 * For each task, once you are done whiteboarding (on a whiteboard, piece of paper or software or your choice), take a picture/screenshot of your diagram
 * This project will be manually reviewed:
@@ -57,7 +59,20 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 * Similarly in a job interview, you should answer what the interviewer asked for, be careful about being too verbose - always ask the interviewer if going into details is necessary - speaking too much can play against you
 * In this project, again, avoid going in details if not asked
 
-#### 0. Simple web stack
+### 0. Simple web stack
+
+A server is a computer or software program that provides a service or functionality to other computers or devices on a network. In the context of the internet, a server typically refers to a computer or software program that provides services such as serving web pages, email, file sharing, or database access to other computers or devices.
+
+A domain name is a unique name that identifies a website on the internet. The role of a domain name is to provide a memorable and easy-to-use address for a website so that users can access it without having to remember its IP address (which is a numerical address that identifies a specific computer or device on a network).
+
+The "www" in "www.foobar.com" is not a DNS record but rather a subdomain. A subdomain is a subset of a larger domain that is used to organize and distinguish different services or sections of a website. The DNS record associated with the subdomain "www" is typically an "A" record, which maps the subdomain to an IP address.
+
+The role of a web server is to serve web pages to clients (such as web browsers) that request them over the internet. A web server receives requests from clients, retrieves the appropriate web page files, and sends them back to the client over the internet. The web server is responsible for processing HTTP requests and responses, and for handling the communication between the client and the web application.
+
+An application server is a software program that provides additional functionality beyond what a web server can provide. An application server typically provides services such as transaction management, security, database access, and other functions required by web applications. Application servers can be used to host web applications that require more advanced functionality than what a simple web server can provide.
+
+A database is a software program that stores and manages structured data. The role of a database is to provide an efficient and reliable way to store and retrieve data, and to support the functionality of web applications that require data storage and retrieval. Web applications typically interact with databases through an application programming interface (API) that provides a way for the application to communicate with the database and perform operations such as querying, inserting, updating, and deleting data.
+
 
 To design a one server web infrastructure that hosts the website reachable via www.foobar.com, let's start by understanding the user's request.
 
@@ -80,7 +95,9 @@ To design a one server web infrastructure that hosts the website reachable via w
 
 However, this infrastructure has some issues.
 
-* It is a single point of failure (SPOF), which means that if the server goes down, the website will not be accessible.* There will be downtime when maintenance is needed, such as deploying new code, as the web server needs to be restarted.
+* It is a single point of failure (SPOF), which means that if the server goes down, the website will not be accessible.
+
+* There will be downtime when maintenance is needed, such as deploying new code, as the web server needs to be restarted.
 * The infrastructure cannot scale if there is too much incoming traffic, as the single server will not be able to handle the load.
 
 **How to address the issues**
