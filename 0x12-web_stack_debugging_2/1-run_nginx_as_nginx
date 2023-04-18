@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
 # Change ownership of Nginx directories to the nginx user
-chown -R nginx:nginx /var/www/html /var/log/nginx /var/lib/nginx /etc/nginx
-
+chmod 644 /etc/nginx/nginx.conf
 # Modify Nginx configuration to run as nginx user and listen on port 8080
-
-sed -i 's/^user .*/user nginx;\n/' /etc/nginx/nginx.conf
-sed -i 's/^listen 80 default_server;/listen 8080 default_server;\n/' /etc/nginx/sites-available/default
-
-# Reload Nginx configuration
-
-nginx -t && systemctl reload nginx
+sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
+sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
+# To stop apache from interfering kill process
+pkill apache2
+# restart the nginx service with the new nginx user
+su nginx -s /bin/bash -c 'service nginx restart'
