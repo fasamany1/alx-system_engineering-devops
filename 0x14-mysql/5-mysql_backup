@@ -1,19 +1,6 @@
 #!/usr/bin/env bash
+# Dump all MySQL databases to the backup file and
+# create a compressed archive of the backup file
 
-# Get the current date
-date=$(date +%d-%m-%Y)
-
-# Set the filename for the backup
-filename="backup.sql"
-
-# Get the MySQL password from the command line argument
-password="$1"
-
-# Dump all MySQL databases to the backup file
-mysqldump -u root -p$password --all-databases > $filename
-
-# Create a compressed archive of the backup file
-tar -czvf $date.tar.gz $filename
-
-# Remove the backup file
-rm $filename
+mysqldump -uroot -p"$1" --all-databases > backup.sql
+tar -czf $(date +%d-%m-%Y).tar.gz backup.sql
