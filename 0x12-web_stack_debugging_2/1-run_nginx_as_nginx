@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Change ownership of Nginx directories to the nginx user
 chmod 644 /etc/nginx/nginx.conf
 # Modify Nginx configuration to run as nginx user and listen on port 8080
