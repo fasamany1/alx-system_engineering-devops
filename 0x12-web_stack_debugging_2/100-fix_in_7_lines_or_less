@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# shorter commands and removes semicolons and && operators
-chown -R nginx:nginx /var/{www/html,log/nginx,lib/nginx,etc/nginx}
-sed -i 's/^user .*/user nginx\n/' /etc/nginx/nginx.conf
-sed -i 's/^listen 80 default_server;/listen 8080 default_server\n/' /etc/nginx/sites-available/default
-systemctl reload nginx
+# Fix a web server to run Nginx listening on port 8080
+chmod 644 /etc/nginx/nginx.conf
+sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
+sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
+pkill apache2
+su nginx -s /bin/bash -c 'service nginx restart'
