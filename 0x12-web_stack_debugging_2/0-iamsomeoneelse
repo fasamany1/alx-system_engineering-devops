@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# check if exactly one argument was provided
+if [ "$#" -ne 1 ]; then
+	echo "Usage: $0 www-data"
+		exit 1
+		fi
+
+# run the whoami command as the specified user using sudo
+sudo -u "$1" whoami
