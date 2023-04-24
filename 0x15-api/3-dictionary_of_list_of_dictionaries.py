@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Retrieves the TODO list for all employees.
-:param user_id: The ID of the user.
-:username: The name of the user
+:param user_Id: The ID of the user.
+:param username: The name of the user
 """
 
 import json
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     """Parse the JSON response and extract the necessary information."""
     dictionary = {}
     for user in users:
-        user_id = user.get('id')
+        user_Id = user.get('id')
         username = user.get('username')
         url = 'https://jsonplaceholder.typicode.com/users/{}'.format(user_id)
         url = url + '/todos/'
