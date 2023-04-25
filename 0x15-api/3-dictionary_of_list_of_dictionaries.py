@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Retrieves the TODO list for all employees.
-:param employee_Id: The ID of the employee.
+:param dictionary: contain the information of an employee.
 """
 
 import json
