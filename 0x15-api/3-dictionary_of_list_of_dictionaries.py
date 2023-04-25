@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Retrieves the TODO list for all employees."""
+"""Export data from an API to JSON format."""
 
 import json
 import requests
