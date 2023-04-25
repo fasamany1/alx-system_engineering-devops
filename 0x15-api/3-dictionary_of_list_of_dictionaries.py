@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""Retrieves the TODO list for all employees.
-:param dictionary: contain the information of an employee.
-"""
+"""Retrieves the TODO list for all employees."""
 
 import json
 import requests
