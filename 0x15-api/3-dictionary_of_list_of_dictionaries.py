@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Export data from an API to JSON format."""
+"""Export data of a REST API in the JSON format."""
 
 import json
 import requests
