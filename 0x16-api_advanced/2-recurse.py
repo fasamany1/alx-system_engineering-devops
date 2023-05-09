@@ -2,12 +2,6 @@
 """
 Recursively queries the Reddit API and returns a list containing
 the titles of all hot articles for a given subreddit.
-    Args:
-        subreddit (str): The name of the subreddit.
-        hot_list (list): The list to store the titles of hot articles (default=[]).
-    Returns:
-        list: The titles of all hot articles for the subreddit, or
-        None if no results are found or the subreddit is not valid.
 """
 import requests
 after = None
@@ -16,7 +10,7 @@ after = None
 def recurse(subreddit, hot_list=[]):
     """return top ten post titles recursively"""
     global after
-    user_agent = {'User-Agent': 'Mozilla/18.05'}
+    user_agent = {'User-Agent': 'Google Chrome Version 81.0.4044.129'}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     parameters = {'after': after}
     results = requests.get(url, params=parameters, headers=user_agent,
