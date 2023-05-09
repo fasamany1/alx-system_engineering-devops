@@ -2,15 +2,7 @@
 """
 Recursively queries the Reddit API, parses the titles of all hot articles,
 and prints a sorted count of given keywords.
-    Args:
-        subreddit (str): The name of the subreddit.
-        word_list (list): The list of keywords to count.
-        counts (dict): The dictionary to store the counts of each keyword (default={}).
-        This parameter is used for recursive calls.
-    Returns:
-        None
 """
-
 import json
 import requests
 
@@ -25,7 +17,7 @@ def count_words(subreddit, word_list, after="", count=[]):
     request = requests.get(url,
                            params={'after': after},
                            allow_redirects=False,
-                           headers={'user-agent': 'Mozilla/18.05'})
+                           headers={'user-agent': 'Google Chrome Version 81.0.4044.129'})
 
     if request.status_code == 200:
         data = request.json()
