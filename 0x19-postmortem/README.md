@@ -54,3 +54,6 @@ The root cause was a database connection leak, resulting in the exhaustion of av
     * Develop and deploy additional monitoring and alerting mechanisms for database connection usage and failures.
     * Provide training sessions for engineers on efficient connection management and resource optimization.
     * Update incident response protocols to include early engagement of database administrators
+
+
+![Incident Lifecycle](https://github.com/fasamany1/alx-system_engineering-devops/assets/9413367/d5a1ddca-1972-4196-8252-bd1f97262964)
