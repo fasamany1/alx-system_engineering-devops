@@ -4,7 +4,7 @@
 
 ### Issue Summary
 
-* Duration: May 1, 2023, 10:00 AM - May 2, 2023, 12:00 PM (GMT)
+* Duration: October 10, 2023, 10:00 AM - October 11, 2023, 12:00 PM (GMT)
 
 * Impact: The messaging service was completely unavailable during the outage, affecting 75% of our active users. Users were unable to send or receive messages, causing significant disruption to their communication activities.
 
@@ -12,9 +12,9 @@
 
 ### Timeline
 
-* May 1, 2023, 10:00 AM (GMT): The issue was first detected when an engineer noticed a spike in error logs related to database connection failures.
+* October 10, 2023, 10:00 AM (GMT): The issue was first detected when an engineer noticed a spike in error logs related to database connection failures.
 
-* May 1, 2023, 10:15 AM (GMT): The monitoring system triggered an alert indicating a significant increase in error rates and service degradation.
+* October 10, 2023, 10:15 AM (GMT): The monitoring system triggered an alert indicating a significant increase in error rates and service degradation.
 
 * Actions Taken:
     * The engineering team immediately investigated the issue, focusing on the database and network infrastructure.
