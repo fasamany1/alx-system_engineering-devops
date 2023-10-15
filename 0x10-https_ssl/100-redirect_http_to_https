@@ -40,12 +40,12 @@ frontend  asamany-frontend-http
         default_backend asamany-backend
 
 frontend asamany-frontend-https
-	bind *:443 ssl crt /etc/haproxy/certs/www.asamany.tech.pem
+	bind *:443 ssl crt /etc/haproxy/certs/asamany.tech.pem
 	http-request set-header X-Forwarded-Proto https
 	http-request redirect scheme https code 301 unless { ssl_fc }
 	default_backend asamany-backend
 
 backend asamany-backend
         balance roundrobin
-        server 105153-web-01 54.90.47.25:80 check
-        server 105153-web-02 54.237.101.240:80 check
+        server 105153-web-01 18.234.193.133:80 check
+        server 105153-web-02 54.175.225.204:80 check
