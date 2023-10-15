@@ -46,8 +46,8 @@ frontend asamany-tech-frontend
 
 backend asamany-tech-backend
     balance roundrobin
-    server 105153-web-01 54.90.47.25:80 check
-    server 105153-web-02 54.237.101.240:80 check
+    server 105153-web-01 18.234.193.133:80 check
+    server 105153-web-02 54.175.225.204:80 check
 "
 
 # shellcheck disable=SC2154
