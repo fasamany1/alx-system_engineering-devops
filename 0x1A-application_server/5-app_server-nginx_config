@@ -1,19 +1,36 @@
 server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
-	add_header X-Served-By 153318-web-01;
-	root /var/www/html;
-	index index.html index.htm;
 	
-	try_files $uri $uri/ =404;
+	# Use server IP as domain namwe
+	server_name 18.234.193.133
 
-	location /hbnb_static {
-		alias /data/web_static/current;
-		index index.html index.htm;
+	# Customize HTTP response header
+	add_header X-Served-By 105153-web-01;
+	
+	# Serve route as /airbnb-onepage/ on AirBnB_clone_v2
+	location = /airbnb-onepage/ {
+		proxy_pass http://127.0.0.1:5000//airbnb-onepage/;
 	}
 
-	location /redirect_me {
-		return 301 https://www.youtube.com;
+	# Serve route as /number_odd_or_even/ on AirBnB_clone_v2
+	location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+		proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
+	}
+
+	# Serve route as /api/ on AirBnB_clone_v3
+	location /api/ {
+		proxy_pass http://0.0.0.0:5002/api/;
+	}
+
+	# Serve route as /2-hbnb on AirBnB_clone_v4
+	location / {
+		proxy_pass http://127.0.0.1:5003/2-hbnb;
+	}
+
+	# Serve static content for AirBnB_clone_v4
+	location /static {
+		alias web_dynamic/static/;
 	}
 
 	error_page 404 /404.html;
@@ -21,32 +38,4 @@ server {
 		root /var/www/html;
 		internal;
 	}
-	
-	location /airbnb-onepage/ {
-		include proxy_params;
-		proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
-		proxy_set_header Host $host;
-		proxy_set_header X-Real-IP $remote_addr;
-	}
-	
-	location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
-		include proxy_params;
-		proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
-	}
-
-	location /api/ {
-		include proxy_params;
-		proxy_pass http://0.0.0.0:5002/api/;
-	}
-
-	location / {
-		include proxy_params;
-		proxy_pass http://0.0.0.0:5003/2-hbnb;
-
-	}
-
-	location /static/ {
-		root /home/ubuntu/AirBnB_clone_v4/web_dynamic;
-	}
-
 }
