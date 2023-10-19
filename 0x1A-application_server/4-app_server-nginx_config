@@ -2,7 +2,7 @@ server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 	
-	# Use server IP as domain namwe
+	# Use server IP as domain name
 	server_name 18.234.193.133
 
 	# Customize HTTP response header
@@ -16,6 +16,11 @@ server {
 	# Serve route as /number_odd_or_even/ on AirBnB_clone_v2
 	location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
 		proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
+	}
+
+	# Serve route as /api/ on AirBnB_clone_v3
+	location /api/ {
+		proxy_pass http://0.0.0.0:5002/api/;
 	}
 
 	error_page 404 /404.html;
