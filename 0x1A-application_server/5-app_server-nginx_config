@@ -2,7 +2,7 @@ server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 	
-	# Use server IP as domain namwe
+	# Use server IP as domain name
 	server_name 18.234.193.133
 
 	# Customize HTTP response header
